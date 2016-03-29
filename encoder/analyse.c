@@ -3212,6 +3212,9 @@ skip_analysis:
                             COPY2_IF_LT( i_cost8x8, analysis.l0.i_cost4x8[i],
                                          h->mb.i_sub_partition[i], D_L0_4x8 );
 
+                            COPY2_IF_LT( i_cost8x8, analysis.l0.me8x8[i].cost,
+                                        h->mb.i_sub_partition[i], D_L0_8x8)
+
                             i_cost += i_cost8x8 - analysis.l0.me8x8[i].cost;
                         }
                         x264_mb_cache_mv_p8x8( h, &analysis, i );
